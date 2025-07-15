@@ -1,50 +1,109 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog</title>
+  <title>Blog | Lulu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fbfbca;
-      padding: 40px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a;
+      color: #f1f5f9;
+      padding: 40px 20px;
+    }
+
     h1 {
       text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
     }
-    .post-preview {
-      background: white;
-      margin: 30px auto;
-      padding: 20px;
-      max-width: 700px;
+
+    .blog-container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .blog-post {
+      background-color: #1e293b;
+      padding: 25px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
     }
-    .post-preview h2 {
+
+    .blog-post:hover {
+      transform: translateY(-4px);
+    }
+
+    .post-title {
+      font-size: 1.6rem;
+      color: #8b9dba;
       margin-bottom: 10px;
     }
-    .post-preview a {
+
+    .post-date {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-bottom: 15px;
+    }
+
+    .post-snippet {
+      font-size: 1rem;
+      color: #cbd5e1;
+      margin-bottom: 10px;
+    }
+
+    .read-more {
+      font-size: 0.9rem;
+      color: #3b82f6;
       text-decoration: none;
-      color: #007acc;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <h1>Blog</h1>
-  <div class="post-preview">
-    <h2>In-Depth Project Breakdown</h2>
-    <p>A look into how I built one of my most exciting projects and the lessons I learned along the way.</p>
-    <a href="#">Read more →</a>
-  </div>
-  <div class="post-preview">
-    <h2>What I’m Curious About Right Now</h2>
-    <p>Exploring some current interests in tech, data, and how I’m staying inspired.</p>
-    <a href="#">Read more →</a>
-  </div>
-  <div class="post-preview">
-    <h2>Creative Meets Technical</h2>
-    <p>How my non-technical hobbies shape the way I approach data and design problems.</p>
-    <a href="#">Read more →</a>
+  <div class="blog-container">
+
+    <div class="blog-post">
+      <div class="post-title">✨ Behind the Build: Cancer Survival Predictor</div>
+      <div class="post-date">Published July 10, 2025</div>
+      <div class="post-snippet">
+        A breakdown of the steps I took to design, train, and evaluate a survival model using NHS data — and what I learned from the process.
+      </div>
+      <a class="read-more" href="#">Read More</a>
+    </div>
+
+    <div class="blog-post">
+      <div class="post-title">🌍 Tech, Ethics & Identity</div>
+      <div class="post-date">Published June 29, 2025</div>
+      <div class="post-snippet">
+        Reflecting on how my cultural background shapes the way I approach tech — from the questions I ask to the solutions I build.
+      </div>
+      <a class="read-more" href="#">Read More</a>
+    </div>
+
+    <div class="blog-post">
+      <div class="post-title">🔧 5 Tools I Can’t Live Without</div>
+      <div class="post-date">Published June 18, 2025</div>
+      <div class="post-snippet">
+        These tools save me time, keep me creative, and help me stay focused across my data projects and writing work.
+      </div>
+      <a class="read-more" href="#">Read More</a>
+    </div>
+
   </div>
 </body>
 </html>
+
