@@ -1,109 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | Lulu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | Lulu Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Sora:wght@500;600&display=swap" rel="stylesheet">
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
       background-color: #0f172a;
-      color: #f1f5f9;
-      padding: 40px 20px;
+      color: #f3f4f6;
+      font-family: 'Space Grotesk', sans-serif;
     }
 
-    h1 {
-      text-align: center;
-      font-size: 2.5rem;
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 20px;
+      background-color: #0f172a;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #f3f4f6;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #8b9dba;
+    }
+
+    .nav-divider {
+      display: flex;
+      justify-content: center;
+      margin-top: -10px;
       margin-bottom: 30px;
+    }
+
+    .nav-divider hr {
+      width: 450px;
+      height: 2px;
+      background-color: #8b9dba;
+      border: none;
+      border-radius: 2px;
+    }
+
+    .blog-header {
+      text-align: center;
+      font-family: 'Sora', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .blog-subtitle {
+      text-align: center;
+      color: #94a3b8;
+      margin-bottom: 40px;
+      font-size: 1rem;
     }
 
     .blog-container {
-      max-width: 850px;
-      margin: 0 auto;
+      max-width: 1000px;
+      margin: 0 auto 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
     }
 
-    .blog-post {
-      background-color: #1e293b;
+    .blog-card {
+      border: 2px solid #8b9dba;
       padding: 25px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
+      background-color: transparent;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
-    .blog-post:hover {
-      transform: translateY(-4px);
+    .blog-card:hover {
+      transform: translateY(-6px);
+      border-color: #64748b;
     }
 
-    .post-title {
-      font-size: 1.6rem;
-      color: #8b9dba;
+    .blog-title {
+      font-size: 1.2rem;
+      font-weight: 600;
       margin-bottom: 10px;
+      color: #f3f4f6;
     }
 
-    .post-date {
-      font-size: 0.9rem;
+    .blog-date {
+      font-size: 0.85rem;
       color: #94a3b8;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
-    .post-snippet {
-      font-size: 1rem;
+    .blog-snippet {
+      font-size: 0.95rem;
       color: #cbd5e1;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     .read-more {
       font-size: 0.9rem;
-      color: #3b82f6;
+      color: #8b9dba;
       text-decoration: none;
+      font-weight: 500;
     }
 
     .read-more:hover {
       text-decoration: underline;
     }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9em;
+      color: #94a3b8;
+    }
   </style>
 </head>
 <body>
-  <h1>Blog</h1>
-  <div class="blog-container">
 
-    <div class="blog-post">
-      <div class="post-title">✨ Behind the Build: Cancer Survival Predictor</div>
-      <div class="post-date">Published July 10, 2025</div>
-      <div class="post-snippet">
-        A breakdown of the steps I took to design, train, and evaluate a survival model using NHS data — and what I learned from the process.
-      </div>
-      <a class="read-more" href="#">Read More</a>
-    </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">Get to Know Me</a>
+    <a href="events.html">Events</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-    <div class="blog-post">
-      <div class="post-title">🌍 Tech, Ethics & Identity</div>
-      <div class="post-date">Published June 29, 2025</div>
-      <div class="post-snippet">
-        Reflecting on how my cultural background shapes the way I approach tech — from the questions I ask to the solutions I build.
-      </div>
-      <a class="read-more" href="#">Read More</a>
-    </div>
-
-    <div class="blog-post">
-      <div class="post-title">🔧 5 Tools I Can’t Live Without</div>
-      <div class="post-date">Published June 18, 2025</div>
-      <div class="post-snippet">
-        These tools save me time, keep me creative, and help me stay focused across my data projects and writing work.
-      </div>
-      <a class="read-more" href="#">Read More</a>
-    </div>
-
+  <div class="nav-divider">
+    <hr>
   </div>
+
+  <h1 class="blog-header">Blog</h1>
+  <p class="blog-subtitle">Insights, breakdowns, and reflections from projects and passions.</p>
+
+  <div class="blog-container">
+    <div class="blog-card">
+      <div class="blog-title">Breaking Down My Cancer Survival Project</div>
+      <div class="blog-date">June 2025</div>
+      <div class="blog-snippet">I explain the thought process, data preprocessing, and final outputs behind one of my most personal and challenging machine learning projects.</div>
+      <a class="read-more" href="#">Read more →</a>
+    </div>
+    <div class="blog-card">
+      <div class="blog-title">Why I Love APIs (and You Might Too)</div>
+      <div class="blog-date">May 2025</div>
+      <div class="blog-snippet">APIs changed how I approached automation and integration. Here's how I use them and why they're powerful for data science work.</div>
+      <a class="read-more" href="#">Read more →</a>
+    </div>
+    <div class="blog-card">
+      <div class="blog-title">Learning in Public: Lessons from My First Year</div>
+      <div class="blog-date">April 2025</div>
+      <div class="blog-snippet">The highs, lows, and surprises of building in the open. What I learned about growth, failure, and building a personal brand.</div>
+      <a class="read-more" href="#">Read more →</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Lulu M | Built with 💻 on GitHub Pages
+  </footer>
+
 </body>
 </html>
+
 
