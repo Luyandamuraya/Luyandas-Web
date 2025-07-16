@@ -1,54 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Lulu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Lulu Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Sora:wght@500;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       background-color: #0f172a;
-      color: #f1f5f9;
-      padding: 40px 20px;
+      color: #f3f4f6;
     }
 
-    h1 {
-      text-align: center;
-      font-size: 2.5rem;
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 20px;
+      background-color: #0f172a;
+      font-family: 'Inter', sans-serif;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #f3f4f6;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #8b9dba;
+    }
+
+    .nav-divider {
+      display: flex;
+      justify-content: center;
+      margin-top: -10px;
       margin-bottom: 30px;
     }
 
+    .nav-divider hr {
+      width: 450px;
+      height: 2px;
+      background-color: #8b9dba;
+      border: none;
+      border-radius: 2px;
+    }
+
+    .projects-header {
+      text-align: center;
+      font-family: 'Sora', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .projects-subtitle {
+      text-align: center;
+      color: #94a3b8;
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
     .projects-container {
+      max-width: 1100px;
+      margin: 0 auto 80px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
+      padding: 0 20px;
     }
 
     .project-card {
-      background-color: #1e293b;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
+      border: 2px solid #8b9dba;
+      border-radius: 0;
+      padding: 25px;
+      background-color: transparent;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      border-color: #64748b;
     }
 
     .project-title {
-      font-size: 1.4rem;
-      color: #8b9dba;
+      font-size: 1.2rem;
+      font-weight: 600;
       margin-bottom: 10px;
+      color: #f3f4f6;
     }
 
     .project-description {
@@ -57,54 +99,59 @@
       margin-bottom: 15px;
     }
 
-    .project-links a {
-      display: inline-block;
-      margin-right: 10px;
-      font-size: 0.9rem;
-      color: #3b82f6;
-      text-decoration: none;
+    .project-tags {
+      font-size: 0.85rem;
+      color: #8b9dba;
     }
 
-    .project-links a:hover {
-      text-decoration: underline;
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9em;
+      color: #94a3b8;
     }
   </style>
 </head>
 <body>
-  <h1>My Projects</h1>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">Get to Know Me</a>
+    <a href="events.html">Events</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="nav-divider">
+    <hr>
+  </div>
+
+  <h1 class="projects-header">Projects</h1>
+  <p class="projects-subtitle">A collection of things I’ve built, explored, and learned from.</p>
+
   <div class="projects-container">
     <div class="project-card">
-      <div class="project-title">Cancer Survival Predictor</div>
-      <div class="project-description">
-        A machine learning model that predicts cancer survival using real NHS data. Focused on preprocessing, model accuracy and interpretability.
-      </div>
-      <div class="project-links">
-        <a href="#">View Code</a>
-        <a href="#">Read More</a>
-      </div>
+      <h2 class="project-title">Cancer Survival Predictor</h2>
+      <p class="project-description">A machine learning model trained on NHS cancer data to predict survival outcomes. Used logistic regression and SHAP values for interpretability.</p>
+      <p class="project-tags">Python · scikit-learn · NHS Data · SHAP</p>
     </div>
-
     <div class="project-card">
-      <div class="project-title">Livestream Tracker</div>
-      <div class="project-description">
-        Built a real-time dashboard that detects abnormal spikes in views to identify leaked experimental subjects.
-      </div>
-      <div class="project-links">
-        <a href="#">View Code</a>
-        <a href="#">Read More</a>
-      </div>
+      <h2 class="project-title">Crime & Deprivation Dashboard</h2>
+      <p class="project-description">An interactive data visualisation exploring the correlation between crime rates and local deprivation indices across London boroughs.</p>
+      <p class="project-tags">Plotly · Public Datasets · Power BI</p>
     </div>
-
     <div class="project-card">
-      <div class="project-title">Synthetic Control Validation</div>
-      <div class="project-description">
-        Validated policy impact using synthetic control methods on simulated datasets, including known treatment effects and pointwise differences.
-      </div>
-      <div class="project-links">
-        <a href="#">View Code</a>
-        <a href="#">Read More</a>
-      </div>
+      <h2 class="project-title">API Auto Grouper</h2>
+      <p class="project-description">A custom-built API using Python and Flask that classifies messy text data into structured categories, streamlining internal workflows.</p>
+      <p class="project-tags">Flask · Regex · Automation</p>
     </div>
   </div>
+
+  <footer>
+    &copy; 2025 Lulu M | Built with 💻 on GitHub Pages
+  </footer>
+
 </body>
 </html>
+
