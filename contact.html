@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects | Luyanda Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Sora:wght@500;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Contact | Luyanda Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script> <!-- Replace 'yourkitid' -->
   <style>
     body {
       margin: 0;
@@ -20,14 +21,13 @@
       gap: 25px;
       padding: 20px;
       background-color: #1a2641;
-      font-family: 'Inter', sans-serif;
     }
 
     nav a {
-      font-size: 0.9rem;
       text-decoration: none;
       color: #f3f4f6;
       font-weight: 500;
+      font-size: 0.9rem;
       transition: color 0.3s ease;
     }
 
@@ -39,7 +39,7 @@
       display: flex;
       justify-content: center;
       margin-top: -10px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     .nav-divider hr {
@@ -50,57 +50,40 @@
       border-radius: 2px;
     }
 
-    .projects-header {
+    .contact-container {
+      max-width: 700px;
+      margin: 0 auto;
       text-align: center;
-      font-family: 'Sora', sans-serif;
+      padding: 60px 20px;
+    }
+
+    .contact-container h1 {
       font-size: 2.5rem;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      color: #8b9dba;
     }
 
-    .projects-subtitle {
-      text-align: center;
-      color: #94a3b8;
-      margin-bottom: 40px;
-      font-size: 1rem;
-    }
-
-    .projects-container {
-      max-width: 1100px;
-      margin: 0 auto 80px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      padding: 0 20px;
-    }
-
-    .project-card {
-      border: 2px solid #8b9dba;
-      border-radius: 0;
-      padding: 25px;
-      background-color: transparent;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      border-color: #64748b;
-    }
-
-    .project-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #f3f4f6;
-    }
-
-    .project-description {
-      font-size: 0.95rem;
+    .contact-container p {
+      font-size: 1.1rem;
       color: #cbd5e1;
-      margin-bottom: 15px;
+      margin-bottom: 40px;
     }
 
-    .project-tags {
-      font-size: 0.85rem;
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-icons a {
+      font-size: 2rem;
+      color: #f3f4f6;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .contact-icons a:hover {
+      transform: scale(1.2);
       color: #8b9dba;
     }
 
@@ -113,7 +96,6 @@
   </style>
 </head>
 <body>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
@@ -123,6 +105,28 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="nav-divider">
-    <hr>
+  <div class="nav-divider"><hr></div>
+
+  <section class="contact-container">
+    <h1>Let’s Connect</h1>
+    <p>Feel free to reach out for collaborations, opportunities, or just to say hi!</p>
+    
+  <div class="contact-icons">
+    <a href="https://www.linkedin.com/in/luyanda-muraya-8846a4215/" target="_blank">
+      <img src="icons8-linkedin-50.png" alt="LinkedIn" />
+    </a>
+    <a href="https://github.com/your-username" target="_blank">
+      <img src="icons8-github-50.png" alt="GitHub" />
+    </a>
+    <a href="mailto:luyandamuraya@gmail.com">
+      <img src="ons8-email-50.png" alt="Email" />
+    </a>
   </div>
+  
+  </section>
+  <footer>
+    &copy; 2025 Luyanda Muraya | Luyandamuraya@gmail.com | 07413256450 | 
+  </footer>
+</body>
+</html>
+
