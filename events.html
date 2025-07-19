@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Events | Luyanda Portfolio</title>
+  <title>Events | Lulu Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -15,10 +17,16 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: #1a2641;
       color: #f3f4f6;
-    }
+      }
+      
+      h1, h2, h3, h4 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+      }
+  
 
     nav {
       display: flex;
@@ -27,6 +35,7 @@
       padding: 20px;
       background-color: #1a2641;
       font-family: 'Inter', sans-serif;
+      
     }
 
     nav a {
@@ -91,6 +100,11 @@
       min-width: 260px;
     }
 
+    .current-item img:hover {
+      transform: translateY(-4px);
+      transition: transform 0.3s ease;
+    }
+    
     /* PAST SECTION */
     .past-container {
       display: grid;
@@ -196,7 +210,7 @@
     <h2>Current Involvements</h2>
 
     <div class="current-item">
-      <img src="Embrace_discussion.png" alt="ERG Site Lead Photo" width="250" height="200">
+      <img src="Embrace_discussion.png" alt="ERG Site Lead Photo" width="300" height="150">
       <div class="current-text">
         <h3>Embrace Site Lead ERG</h3>
         <p>Embrace ERG Site Lead:Leading local coordination for the London office by driving engagement, organising events, andh helping shape 
@@ -206,7 +220,7 @@
     </div>
 
     <div class="current-item">
-      <img src="BHBIA_team_photo.png" alt="DEI Committee Photo" width="250" height="200" />
+      <img src="BHBIA_team_photo.png" alt="DEI Committee Photo" width="300" height="150" />
       <div class="current-text">
         <h3>BHBIA DEI Committee Member</h3>
         <p>Supporting Diversity, Equity, and Inclusion efforts by helping to plan initiatives, 
@@ -302,7 +316,6 @@
 
 </body>
 </html>
-
 
 
 
