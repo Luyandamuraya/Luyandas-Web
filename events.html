@@ -6,12 +6,17 @@
   <title>Events | Lulu Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background-color: #1a2641;
       color: #f3f4f6;
-      margin: 0;
-      padding: 0;
+      line-height: 1.6;
     }
 
     nav {
@@ -27,6 +32,7 @@
       color: #f3f4f6;
       font-weight: 500;
       font-size: 0.9rem;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
@@ -37,7 +43,7 @@
       display: flex;
       justify-content: center;
       margin-top: -10px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     .nav-divider hr {
@@ -48,80 +54,106 @@
       border-radius: 2px;
     }
 
-
-    .current-involvements{
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
     .section {
-      max-width: 900px;
-      margin: 40px auto;
+      max-width: 1100px;
+      margin: 0 auto 60px;
       padding: 0 20px;
     }
 
     .section h2 {
-      border-bottom: 2px solid #8b9dba;
-      padding-bottom: 10px;
+      font-size: 2rem;
       margin-bottom: 30px;
-      font-size: 1.8rem;
+      border-left: 5px solid #8b9dba;
+      padding-left: 15px;
     }
 
-    .event-item {
-      margin-bottom: 40px;
+    /* CURRENT SECTION */
+    .current-item {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 50px;
+      align-items: center;
+      animation: fadeInUp 0.6s ease forwards;
     }
 
-    .event-item img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    .current-item img {
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      flex-shrink: 0;
     }
 
-    .event-library {
+    .current-text {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    /* PAST SECTION */
+    .past-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
     }
 
-    .event-card {
-      background-color: #1e293b;
-      padding: 20px;
+    .past-card {
+      background-color: #22304d;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
     }
 
-    .event-card:hover {
+    .past-card:hover {
       transform: translateY(-5px);
     }
 
-    .event-card img {
-      width: 100%;
-      border-radius: 8px;
+    .past-card h4 {
+      color: #8b9dba;
       margin-bottom: 10px;
     }
 
-    .event-card h4 {
-      margin: 0 0 10px;
-      color: #e2e8f0;
+    /* LIBRARY SECTION */
+    .library-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
-    .event-card p {
-      font-size: 0.95rem;
-      color: #cbd5e1;
+    .library-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      cursor: pointer;
     }
 
-    .read-more {
-      font-size: 0.9rem;
-      color: #cfdbee;
-      text-decoration: none;
-      font-weight: 500;
+    .library-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
     }
 
-    .read-more:hover {
-      text-decoration: underline;
+    .library-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .library-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(26, 38, 65, 0.9);
+      color: #f3f4f6;
+      padding: 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .library-item:hover .library-caption {
+      opacity: 1;
     }
 
     footer {
@@ -130,10 +162,22 @@
       font-size: 0.9em;
       color: #94a3b8;
     }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
@@ -143,111 +187,120 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="nav-divider">
-    <hr>
-  </div>
+  <div class="nav-divider"><hr></div>
 
+  <!-- Current Involvements -->
+  <section class="section">
+    <h2>Current Involvements</h2>
 
-      <section class="current-involvements">
-        <h2>Current Involvements</h2>
-      
-        <!-- Site Lead -->
-        <div class="involvement-item">
-          <img src="Embrace_discussion.png" alt="ERG Site Lead Photo" width="300" height="150" />
-          <div class="involvement-text">
-            <h3>Embrace ERG Site Lead</h3>
-            <p>
-            Embrace ERG Site Lead:Leading local coordination for the London office by driving engagement, organising events, andh helping shape 
-            an inclusive workplace culture across our site. At present, I am spearheading the planning for the first ever cross ERG event at our London site. 
-            Previously, I collaberated with WLI to put together the WLI X Embrace Panel Event on 'Reclaiming your narrative' and supported on smaller events. 
-          </div>
-        </div>
-      
-        <!-- DEI Committee -->
-        <div class="involvement-item">
-          <img src="BHBIA_team_photo.png" alt="DEI Committee Photo" width="300" height="150" />
-          <div class="involvement-text">
-            <h3>BHBIA DEI Committee Member</h3>
-            <p>
-              BHBIA DEI Committee member:</strong> Supporting Diversity, Equity, and Inclusion efforts by helping to plan initiatives, 
-              review internal policies, and represent early-career voices in key conversations within the pharmecuitical industry. 
-              In May, I conducted interviews and wrote feature pieces as part of the lead-up to BHBIA's Menopause Webinar, which can be found <a class="read-more" href="https://www.bhbia.org.uk/resources/diversity-equity-inclusion/neurodiversity" target="_blank">here.</a> 
-              I’m currently planning a Menopause Webinar for Menopause Awarness month for BHBIA, scheduled for October. </p>
-          </div>
-        </div>
-      
-        <!-- Youth Tech Council (No image) -->
-        <div class="involvement-text full-width">
-          <h3>National Youth Tech Council</h3>
-          <p>
-            Recently,  I've joined a passionate group of like-minded indivisuals helping build real world 
-            soloutions that challenge how digital and emerging technologies are developed.  </p>
-        </div>
-      </section>
-      
+    <div class="current-item">
+      <img src="Embrace_discussion.png" alt="ERG Site Lead Photo" width="300" height="150">
+      <div class="current-text">
+        <h3>Embrace Site Lead ERG</h3>
+        <p>Embrace ERG Site Lead:Leading local coordination for the London office by driving engagement, organising events, andh helping shape 
+          an inclusive workplace culture across our site. At present, I am spearheading the planning for the first ever cross ERG event at our London site. 
+          Previously, I collaberated with WLI to put together the WLI X Embrace Panel Event on 'Reclaiming your narrative' and supported on smaller events. 
+        </div>  
+    </div>
 
-  <div class="section">
+    <div class="current-item">
+      <img src="BHBIA_team_photo.png" alt="DEI Committee Photo" width="300" height="150" />
+      <div class="current-text">
+        <h3>BHBIA DEI Committee Member</h3>
+        <p>Supporting Diversity, Equity, and Inclusion efforts by helping to plan initiatives, 
+          review internal policies, and represent early-career voices in key conversations within the pharmecuitical industry. 
+          In May, I conducted interviews and wrote feature pieces as part of the lead-up to BHBIA's Menopause Webinar, which can be found <a class="read-more" href="https://www.bhbia.org.uk/resources/diversity-equity-inclusion/neurodiversity" target="_blank">here.</a> 
+          I’m currently planning a Menopause Webinar for Menopause Awarness month for BHBIA, scheduled for October. </p>
+         </div>
+    </div>
+
+    <div class="current-item" style="flex-direction: column;">
+      <div class="current-text">
+        <h3> National Youth Tech Council</h3>
+        <p>ecently,  I've joined a passionate group of like-minded indivisuals helping build real world 
+          soloutions that challenge how digital and emerging technologies are developed. </p>
+         </div>
+    </div>
+  </section>
+
+  <!-- Past Involvements -->
+  <section class="section">
     <h2>Past Involvements</h2>
-    <ul>
-      <li><strong>Hackney Young Futures Representative:</strong> Represented youth voices in national discussions.</li>
-      <br> <li><strong>Hackney Youth Council Elected leader:</strong> Worked with council on policy, distributed over £250k in grants to local youth-led groups.</li>
-      <br> <li><strong>Student Room Advisory Board member:</strong> Provided insight into student needs and supported new curriculum development.</li>
-      <br> <li><strong>Museum of the home Advisory Board member:</strong> Through collaboration and consultation, working with the museum to address
-         historical representation and help shape relocation plans for a contentious statue. In this role, I attended various meetings alongside
-        facilitating and leading the disucssion for american exchange students. </li>
-    </ul>
-  </div>
 
-  <div class="section">
-    <h2>Event Library</h2>
-      <div class="library-grid">
-        <div class="event-card">
-          <img src="event1.jpg" alt="Event 1" width="300" height="250" >
-          <div class="event-desc">Spoke on inclusive design at Tech Futures Summit 2024</div>
-        </div>
-        <div class="event-card">
-          <img src="event2.jpg" alt="Event 2" width="300" height="250" >
-          <div class="event-desc">Panel member for Youth Innovation Council</div>
-        </div>
-        <div class="event-card">
-          <img src="event3.jpg" alt="Event 3" width="300" height="250" >
-          <div class="event-desc">Organised site-wide Black History Month event</div>
-        </div>
-        <div class="event-card">
-          <img src="event4.jpg" alt="Event 4" width="300" height="250" >
-          <div class="event-desc">Volunteered with STEM Sisters UK</div>
-        </div>
-        <div class="event-card">
-          <img src="event5.jpg" alt="Event 5" width="300" height="250" >
-          <div class="event-desc">Attended Women in Tech London meetup</div>
-        </div>
-        <div class="event-card">
-          <img src="event6.jpg" alt="Event 6" width="300" height="250" >
-          <div class="event-desc">Youth council community grant awards night</div>
-        </div>
-        <div class="event-card">
-          <img src="event7.jpg" alt="Event 7" width="300" height="250" >
-          <div class="event-desc">Co-led cross-ERG diversity panel</div>
-        </div>
-        <div class="event-card">
-          <img src="event8.jpg" alt="Event 8" width="300" height="250" >
-          <div class="event-desc">Delivered data literacy workshop at local school</div>
-        </div>
-        <div class="event-card">
-          <img src="event9.jpg" alt="Event 9" width="300" height="250" >
-          <div class="event-desc">Participated in tech-for-good hackathon</div>
-        </div>
+    <div class="past-container">
+      <div class="past-card">
+        <h4>Hackney Youth Council ELected leader</h4>
+        <p>Collaborated with council leaders to review policy and support youth-led change. Oversaw distribution of over £250K in grant funding to local community groups.</p>
       </div>
-    </section>
-    
-  </div>
+      <div class="past-card">
+        <h4>Student Room Advisory Board</h4>
+        <p>Supported programme development, feedback cycles, and student engagement strategies in partnership with regional education boards.</p>
+      </div>
+      <div class="past-card">
+        <h4>Hackney Young Futures Representative</h4>
+        <p>Advised on key issues affecting underrepresented youth, contributing to initiatives that spanned employment, technology, and mental health support.</p>
+      </div>
+      <div class="past-card">
+        <h4>Museum of the Home Advisory Board member:</h4>
+        <p>Through collaboration and consultation, working with the museum to address
+          historical representation and help shape relocation plans for a contentious statue. In this role, I attended various meetings alongside
+         facilitating and leading the disucssion for american exchange students.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Library -->
+  <section class="section">
+    <h2>Event Library</h2>
+
+    <div class="library-grid">
+      <div class="library-item">
+        <img src="event1.jpg" alt="Event 1">
+        <div class="library-caption">Spoke on DEI panel in London</div>
+      </div>
+      <div class="library-item">
+        <img src="event2.jpg" alt="Event 2">
+        <div class="library-caption">Youth Tech Hackathon – Summer 2024</div>
+      </div>
+      <div class="library-item">
+        <img src="event3.jpg" alt="Event 3">
+        <div class="library-caption">ERG Strategy Session – Q1 Planning</div>
+      </div>
+      <div class="library-item">
+        <img src="event4.jpg" alt="Event 4">
+        <div class="library-caption">Local Council Town Hall</div>
+      </div>
+      <div class="library-item">
+        <img src="event5.jpg" alt="Event 5">
+        <div class="library-caption">Cross-ERG Planning Committee Meeting</div>
+      </div>
+      <div class="library-item">
+        <img src="event6.jpg" alt="Event 6">
+        <div class="library-caption">Community Youth Conference – Workshop Lead</div>
+      </div>
+      <div class="library-item">
+        <img src="event7.jpg" alt="Event 7">
+        <div class="library-caption">Panel: Reclaiming Your Narrative</div>
+      </div>
+      <div class="library-item">
+        <img src="event8.jpg" alt="Event 8">
+        <div class="library-caption">DEI Networking Mixer – Winter 2023</div>
+      </div>
+      <div class="library-item">
+        <img src="event9.jpg" alt="Event 9">
+        <div class="library-caption">Intro to Grants Training Session</div>
+      </div>
+    </div>
+  </section>
 
   <footer>
     &copy; 2025 Luyanda Muraya | Luyandamuraya@gmail.com | 07413256450 | 
   </footer>
 
+
 </body>
 </html>
+
 
 
 
