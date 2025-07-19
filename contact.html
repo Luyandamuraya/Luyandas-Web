@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Luyanda Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Sora:wght@500;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: #1a2641;
+      color: #f3f4f6;
+    }
 
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 20px;
+      background-color: #1a2641;
+      font-family: 'Inter', sans-serif;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #f3f4f6;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #8b9dba;
+    }
+
+    .nav-divider {
+      display: flex;
+      justify-content: center;
+      margin-top: -10px;
+      margin-bottom: 30px;
+    }
+
+    .nav-divider hr {
+      width: 450px;
+      height: 2px;
+      background-color: #8b9dba;
+      border: none;
+      border-radius: 2px;
+    }
+
+    .projects-header {
+      text-align: center;
+      font-family: 'Sora', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .projects-subtitle {
+      text-align: center;
+      color: #94a3b8;
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    .projects-container {
+      max-width: 1100px;
+      margin: 0 auto 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .project-card {
+      border: 2px solid #8b9dba;
+      border-radius: 0;
+      padding: 25px;
+      background-color: transparent;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: #64748b;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #f3f4f6;
+    }
+
+    .project-description {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      margin-bottom: 15px;
+    }
+
+    .project-tags {
+      font-size: 0.85rem;
+      color: #8b9dba;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9em;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">Get to Know Me</a>
+    <a href="events.html">Events</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="nav-divider">
+    <hr>
+  </div>
