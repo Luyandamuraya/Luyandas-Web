@@ -98,27 +98,27 @@
     <div class="article-meta">Published July 2025 · 5 min read</div>
 
     <p>
-      Cross Join's may not always be the go-to,espeically when inner joins and left joins do the job so appropriately, but a cross join is great for finding those potential joins you might have missed. 
+      Cross Join's may not always be the go-to, espeically when Inner Joins and Left Joins do the job so appropriately. Yet, a Cross Join is great for finding those potential joins you might have missed. 
     </p>
 
-    <h2>What is a CROSS JOIN?</h2>
+    <h2>What is a Cross Join?</h2>
     <p>
       A <code>CROSS JOIN</code> returns every possible combination of rows between two tables — it's also known as a Cartesian Join.
-      <br> It's like 5 kids in a candy store. 
-      kid_in_candy_store.jpg
-      <img src="kid_in_candy_store.jpg" alt="Kid in Candy Store">
-      It joins all the kids with every candy in the store. So, if there's:
-      <br> 5 kids
-      <br> 10 candies
-      <br> 5X10 = 50. Cross join will show all 50 different combinations.
+      <br> <br> Think of 5 kids in a candy store. 
+      <br> <br> 
+      <img src="kid_in_candy_store.jpg" alt="Kid in Candy Store" width="300" height="250">
+      <br> Each Kid has the possibility of taking each candy - it shows us this. It joins all the kids with every candy in the store. So, if there's:
+      <br> <li>5 kids</li>
+      <br> <li>10 Candies</li>
+      <br> <br> 5X10 = 50. Cross join will show us <b>all</b>b> 50 different combinations.
     </p>
 
     <pre><code>SELECT *
-FROM shirts
-CROSS JOIN shoes;</code></pre>
+FROM candy
+CROSS JOIN kids;</code></pre>
 
     <p>
-      This query will pair each shirt with every shoe. So if you have 5 shirts and 10 shoes, you’ll get 50 rows.
+      This query will pair each candy with every kid.
     </p>
 
     <h2>When Would You Use It?</h2>
@@ -138,7 +138,7 @@ CROSS JOIN shoes;</code></pre>
 
     <h2>Final Thoughts</h2>
     <p>
-      <code>CROSS JOIN</code>s are powerful, but like most tools, they work best when used intentionally. Keep experimenting and always check your row counts!
+      <code>CROSS JOINS</code>s are powerful,and should only be used when testing or exploring all pairings. Keep experimenting and always check your row counts!
     </p>
   </div>
 
