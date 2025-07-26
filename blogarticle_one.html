@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why CROSS JOINs Aren’t That Scary | Lulu Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: #1a2641;
+      color: #f3f4f6;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #8b9dba;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .back-link {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      color: #cbd5e1;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #e2e8f0;
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-bottom: 40px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      color: #d1d5db;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      color: #f3f4f6;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    code {
+      background-color: #2c3e5d;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+
+    pre {
+      background-color: #2c3e5d;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      color: #e2e8f0;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 80px;
+      padding: 40px 20px;
+      font-size: 0.9em;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="blog.html" class="back-link">&larr; Back to Blog</a>
+
+    <h1>Why CROSS JOINs Aren’t That Scary</h1>
+    <div class="article-meta">Published July 2025 · 5 min read</div>
+
+    <p>
+      Cross Join's may not always be the go-to,espeically when inner joins and left joins do the job so appropriately, but a cross join is great for finding those potential joins you might have missed. 
+    </p>
+
+    <h2>What is a CROSS JOIN?</h2>
+    <p>
+      A <code>CROSS JOIN</code> returns every possible combination of rows between two tables — it's also known as a Cartesian Join.
+      <br> It's like 5 kids in a candy store. 
+      kid_in_candy_store.jpg
+      <img src="kid_in_candy_store.jpg" alt="Kid in Candy Store">
+      It joins all the kids with every candy in the store. So, if there's:
+      <br> 5 kids
+      <br> 10 candies
+      <br> 5X10 = 50. Cross join will show all 50 different combinations.
+    </p>
+
+    <pre><code>SELECT *
+FROM shirts
+CROSS JOIN shoes;</code></pre>
+
+    <p>
+      This query will pair each shirt with every shoe. So if you have 5 shirts and 10 shoes, you’ll get 50 rows.
+    </p>
+
+    <h2>When Would You Use It?</h2>
+    <p>
+      Most people avoid <code>CROSS JOIN</code>s, but they have their uses:
+      <ul>
+        <li>Generating test datasets</li>
+        <li>Creating scheduling combinations</li>
+        <li>Exploring all possible pairings</li>
+      </ul>
+    </p>
+
+    <h2>Common Pitfalls</h2>
+    <p>
+      Accidentally creating a <code>CROSS JOIN</code> is easy if you forget your <code>ON</code> clause when writing a regular <code>JOIN</code>. Be cautious!
+    </p>
+
+    <h2>Final Thoughts</h2>
+    <p>
+      <code>CROSS JOIN</code>s are powerful, but like most tools, they work best when used intentionally. Keep experimenting and always check your row counts!
+    </p>
+  </div>
+
+  <footer>
+    &copy;  2025 Luyanda Muraya | Luyandamuraya@gmail.com | 07413256450 | 
+  </footer>
+</body>
+</html>
