@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Space Grotesk', sans-serif;
-      background-color: #1a2641;
+      background-color: #364568;
       color: #f3f4f6;
       line-height: 1.7;
     }
@@ -98,52 +98,39 @@
     <div class="article-meta">Published July 2025 · 5 min read</div>
 
     <p>
-      Data Analysis is a fundemental pillar to building the correct insights, but, if done incorrectly it can be catastrophic.
+      Data Analysis is a fundemental pillar to building the correct insights, but, if done incorrectly it can do harm! 
       <br>These are some of my lesson's on data anaysis.
     </p>
 
     <h2>Lesson 1: Stakeholder Requirments </h2>
     <p>
-      Often, a project will have multiple stakeholders and lost in the mass of people, and meetings can become the project requirments.
-      What you may have thought was a simple data extraction, could have intended to be a data dashboard but this request was lost in the stream of people. 
-      <br> <br> Think of 5 kids in a candy store. 
+      Often, a project will have multiple stakeholders with various requirments. This means that each person has a different idea on the output and what they would like to see.  
+      To avoid micommunication and ensure the project runs smoothly it's important to communicate effectively.
+      <br>
+      This can be done through: 
+      <li>Prioritising Stakeholders </li>
+      <li>Constantly Recieving Feedback </li>
+      <li>Plan! </li>
+      <li>Creating a plan for communication and implementation </li>u
       <br> <br> 
-      <img src="kid_in_candy_store.jpg" alt="Kid in Candy Store" width="300" height="250">
+      <br> <br> 
+      <img src="kid_in_candy_store.jpg" alt="Kid in Candy Store" width="400" height="250">
       <br> Each Kid has the possibility of taking each candy - it shows us this. It joins all the kids with every candy in the store. So, if there's:
       <br> <li>5 kids</li>
       <br> <li>10 Candies</li>
       <br> <br> 5X10 = 50. Cross join will show us <b>all</b>b> 50 different combinations.
     </p>
 
-    <pre><code>SELECT *
-FROM candy
-CROSS JOIN kids;</code></pre>
-
+     <h2>Lesson 2: Understanding the problem </h2>
     <p>
-      This query will pair each candy with every kid.
-    </p>
-
-    <h2>When Would You Use It?</h2>
-    <p>
-      Most people avoid <code>CROSS JOIN</code>s, but they have their uses:
-      <ul>
-        <li>Generating test datasets</li>
-        <li>Creating scheduling combinations</li>
-        <li>Exploring all possible pairings</li>
-      </ul>
-    </p>
-
-    <h2>Common Pitfalls</h2>
-    <p>
-      Accidentally creating a <code>CROSS JOIN</code> is easy if you forget your <code>ON</code> clause when writing a regular <code>JOIN</code>. Be cautious!
-    </p>
-
-    <h2>Final Thoughts</h2>
-    <p>
-      <code>CROSS JOINS</code>s are powerful,and should only be used when testing or exploring all pairings. Keep experimenting and always check your row counts!
-    </p>
-  </div>
-
+      Within Data Analysis it's imperative to understand the problem! Without a problem, no analysis would need to be done. For example, if a company wanted to set a realistic target for 2026, 
+      they may forecast sales: 
+      <br> the problem = unsure of what the future sales are
+       <br> soloution = forecasting using a time series model 
+      To help understand the problem you want to think
+      <br> <i>     What is the problem? is there enough information to solve this problem? What could be done? </i>i> 
+      <br> <i>    What is the context? How may solving this problem support this bussiness? How does this link to the teams work? </i>i> 
+  </p>
   <footer>
     &copy;  2025 Luyanda Muraya | Luyandamuraya@gmail.com | 
   </footer>
