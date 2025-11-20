@@ -80,7 +80,7 @@
   padding: 25px;
   background-color: transparent;
   transition: transform 0.3s ease, border-color 0.3s ease;
-  overflow: hidden; 
+  overflow: hidden;
   cursor: pointer;
 }
 
@@ -89,40 +89,39 @@
   border-color: #64748b;
 }
 
-.project-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #f3f4f6;
-  position: relative;
-  z-index: 2;
-}
-
-.project-tags {
-  font-size: 0.85rem;
-  color: #8b9dba;
-  margin-top: 10px;
-  position: relative;
-  z-index: 2;
-}
-
+/* Base description */
 .project-description {
   font-size: 0.95rem;
   color: #cbd5e1;
-  opacity: 0;
-  max-height: 0;
+  line-height: 1.4rem;
+  max-height: 1.4rem; /* Only first sentence height */
   overflow: hidden;
-  transition: all 0.35s ease;
-  position: relative;
-  z-index: 1;
+  transition: max-height 0.4s ease;
 }
 
-
+/* Reveal full text on hover */
 .project-card:hover .project-description {
-  opacity: 1;
-  max-height: 300px;
-  margin-top: 10px;
+  max-height: 500px; /* Enough for full text */
 }
+
+/* This adds a fade effect at the bottom when collapsed */
+.project-description::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), #0f172a);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-description::after {
+  opacity: 0;
+}
+
 
     footer {
       text-align: center;
@@ -158,7 +157,7 @@
     <div class="project-card">
     <h2 class="project-title"> ONGOING - AI Governance Risk Tracker</h2>
     <p class="project-description">
-      I built a web-based tool that scrapes and analyses corporate AI governance disclosures to score organisations on
+      I built a tool that scrapes and analyses corporate AI governance policies and guidelines to then score organisations on
       fairness, transparency and accountability. Using Python, BeautifulSoup and NLP techniques, I extracted policy
       information and applied text analysis to evaluate governance maturity. I deployed a lightweight Flask app to
       visualise risk scores through an interactive interface, demonstrating how analytics can support ethical AI
@@ -181,10 +180,9 @@
   <div class="project-card">
     <h2 class="project-title">NHS Pharmacy Dispensing Forecasting</h2>
     <p class="project-description">
-      I used publicly available NHS Open Prescribing data to analyse and forecast monthly dispensing volumes for key
-      medication categories. After aggregating two years of data in Python, I engineered lag features, analysed seasonal
-      trends, and built a forecasting pipeline comparing ARIMA and Prophet. Prophet performed best, capturing recurring
-      monthly and winter peaks. I visualised projected volumes and emerging trends using Matplotlib and Plotly,
+      I used publicly available NHS Open Prescribing data to analyse and forecast monthly dispensing volumes. 
+      I aggregated data in Python and engineered lag features, analysed seasonal trends, and built a forecasting pipeline comparing ARIMA and Prophet. 
+      Prophet performed best, capturing recurring monthly and winter peaks. I visualised projected volumes and emerging trends using Matplotlib and Plotly,
       demonstrating how prescribing data can support operational planning.
     </p>
     <p class="project-tags">Python · NHS Open Prescribing · ARIMA · Prophet · Time Series</p>
