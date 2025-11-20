@@ -73,36 +73,56 @@
       padding: 0 20px;
     }
 
-    .project-card {
-      border: 2px solid #8b9dba;
-      border-radius: 0;
-      padding: 25px;
-      background-color: transparent;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-    }
+.project-card {
+  position: relative;
+  border: 2px solid #8b9dba;
+  border-radius: 0;
+  padding: 25px;
+  background-color: transparent;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  overflow: hidden; 
+  cursor: pointer;
+}
 
-    .project-card:hover {
-      transform: translateY(-6px);
-      border-color: #64748b;
-    }
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: #64748b;
+}
 
-    .project-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #f3f4f6;
-    }
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #f3f4f6;
+  position: relative;
+  z-index: 2;
+}
 
-    .project-description {
-      font-size: 0.95rem;
-      color: #cbd5e1;
-      margin-bottom: 15px;
-    }
+.project-tags {
+  font-size: 0.85rem;
+  color: #8b9dba;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+}
 
-    .project-tags {
-      font-size: 0.85rem;
-      color: #8b9dba;
-    }
+.project-description {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  position: relative;
+  z-index: 1;
+}
+
+
+.project-card:hover .project-description {
+  opacity: 1;
+  max-height: 300px;
+  margin-top: 10px;
+}
 
     footer {
       text-align: center;
@@ -126,109 +146,86 @@
   <hr>
 </div>
 
-<h1 class="projects-header">Recent Projects</h1>
+<h1 class="projects-header">Autumn Projects</h1>
 <p class="projects-subtitle">A collection of things I’ve built, explored, and learned from.</p>
 
 <div class="projects-container">
 
-  <!-- Existing Projects -->
-  <div class="project-card">
-    <h2 class="project-title">Emissions Data</h2>
-    <p class="project-description">Comparison of UK industry emissions and progress towards sustainability.</p>
-    <p class="project-tags">Python · scikit-learn · ONS Data · SHAP</p>
-  </div>
+</div>
 
-  <div class="project-card">
-    <h2 class="project-title">Crime & Deprivation Dashboard</h2>
-    <p class="project-description">Interactive visualisation exploring correlations between crime rates and deprivation across London boroughs.</p>
-    <p class="project-tags">Plotly · Public Datasets · Power BI</p>
-  </div>
+<div class="projects-container">
 
-  <!-- New Projects -->
+    <div class="project-card">
+    <h2 class="project-title"> ONGOING - AI Governance Risk Tracker</h2>
+    <p class="project-description">
+      I built a web-based tool that scrapes and analyses corporate AI governance disclosures to score organisations on
+      fairness, transparency and accountability. Using Python, BeautifulSoup and NLP techniques, I extracted policy
+      information and applied text analysis to evaluate governance maturity. I deployed a lightweight Flask app to
+      visualise risk scores through an interactive interface, demonstrating how analytics can support ethical AI
+      assessment.
+    </p>
+    <p class="project-tags">Python · NLP · Web Scraping · AI Governance</p>
+  </div>
+  
   <div class="project-card">
-    <h2 class="project-title">UK Health Inequality & Life Expectancy</h2>
-    <p class="project-description">Analysed life expectancy variations across UK boroughs using deprivation, education and demographic factors.</p>
+    <h2 class="project-title">UK Health Inequality & Life Expectancy Analysis</h2>
+    <p class="project-description">
+      I analysed how life expectancy varies across UK local authorities by deprivation, education and demographic factors.
+      I cleaned and merged ONS, IMD and Census 2021 datasets in SQL, engineered new indicators, and modelled correlations
+      between deprivation scores and average life expectancy. Using Python and Power BI, I built an interactive dashboard
+      highlighting geographic inequalities and patterns across England and Wales.
+    </p>
     <p class="project-tags">SQL · Python · Power BI · ONS · IMD · Census 2021</p>
   </div>
 
   <div class="project-card">
-    <h2 class="project-title">Sustainability & Emissions Tracker</h2>
-    <p class="project-description">Excel dashboard tracking greenhouse gas emissions across UK local authorities with advanced Excel modelling.</p>
-    <p class="project-tags">Excel · DEFRA · ONS · Data Visualisation</p>
+    <h2 class="project-title">NHS Pharmacy Dispensing Forecasting</h2>
+    <p class="project-description">
+      I used publicly available NHS Open Prescribing data to analyse and forecast monthly dispensing volumes for key
+      medication categories. After aggregating two years of data in Python, I engineered lag features, analysed seasonal
+      trends, and built a forecasting pipeline comparing ARIMA and Prophet. Prophet performed best, capturing recurring
+      monthly and winter peaks. I visualised projected volumes and emerging trends using Matplotlib and Plotly,
+      demonstrating how prescribing data can support operational planning.
+    </p>
+    <p class="project-tags">Python · NHS Open Prescribing · ARIMA · Prophet · Time Series</p>
   </div>
 
   <div class="project-card">
-    <h2 class="project-title">AI-Driven Sales Forecasting</h2>
-    <p class="project-description">Time-series forecasting model predicting pharmaceutical sales using ARIMA, Prophet and LSTM.</p>
-    <p class="project-tags">Python · Machine Learning · ARIMA · Prophet · LSTM</p>
+    <h2 class="project-title">Recession Impact on UK Financial Markets</h2>
+    <p class="project-description">
+      I examined how UK recession periods influence stock market behaviour, focusing on FTSE indices during historic
+      downturns. Using Python, I cleaned ONS GDP data and Yahoo Finance pricing data, applied event-study methodology,
+      and ran regression models to quantify the impact of recession shocks on returns and volatility. I visualised
+      performance patterns across recession windows and identified the sectors most sensitive to macro-economic stress.
+    </p>
+    <p class="project-tags">Python · Econometrics · Yahoo Finance · ONS GDP Data</p>
   </div>
+
 
   <div class="project-card">
-    <h2 class="project-title">Recession Impact on Markets</h2>
-    <p class="project-description">Studied UK recession periods and their impact on FTSE market returns using event study and regression analysis.</p>
-    <p class="project-tags">Python · ONS · Yahoo Finance · Econometrics</p>
+    <h2 class="project-title">NHS Waiting Times Predictor</h2>
+    <p class="project-description">
+      I modelled NHS treatment waiting times to understand where pressure builds across regions and specialties. After
+      merging publicly available NHS datasets, I used regression and clustering to identify patterns in referral-to-
+      treatment (RTT) times and detect high-pressure bottlenecks. I engineered features such as seasonal demand,
+      capacity and specialty-level trends. The model grouped trusts with similar pressure profiles and flagged where
+      waiting times were most likely to rise.
+    </p>
+    <p class="project-tags">Python · NHS Data · Regression · Clustering</p>
   </div>
 
-  <div class="project-card">
-    <h2 class="project-title">AI Governance Risk Tracker</h2>
-    <p class="project-description">Web tool scraping and analysing AI governance policies, generating fairness, transparency and accountability scores.</p>
-    <p class="project-tags">NLP · Web Scraping · Flask · Governance</p>
+    <div class="project-card">
+    <h2 class="project-title">Sustainability & Emissions Performance Tracker</h2>
+    <p class="project-description">
+      I created an Excel-based dashboard to analyse greenhouse gas emissions across UK local authorities using DEFRA and
+      ONS datasets. I cleaned and normalised raw emissions data, calculated emissions per capita and per km², and built
+      an interactive dashboard using advanced Excel functions, pivot tables and slicers. The tool highlights regional
+      disparities in sustainability performance and identifies the highest- and lowest-emitting sectors.
+    </p>
+    <p class="project-tags">Excel · ONS · Data Visualisation</p>
   </div>
-
-  <div class="project-card">
-    <h2 class="project-title">Air Quality & Respiratory Health Model</h2>
-    <p class="project-description">Quantified the relationship between air pollution and respiratory hospital admissions, building area-level risk scores.</p>
-    <p class="project-tags">Python · DEFRA · NHS Data · Regression · Geo-analysis</p>
-  </div>
-
-  <div class="project-card">
-    <h2 class="project-title">Winter A&E Pressure Predictor</h2>
-    <p class="project-description">Forecasting model predicting A&E spikes during winter by combining illness surveillance, weather patterns and demographics.</p>
-    <p class="project-tags">Time Series · Python · Prophet · NHS Data</p>
-  </div>
-
-  <div class="project-card">
-    <h2 class="project-title">Housing Insecurity & Eviction Risk</h2>
-    <p class="project-description">Modelled eviction pressure across UK regions using affordability, unemployment and arrears indicators.</p>
-    <p class="project-tags">Machine Learning · ONS · Social Determinants · Risk Modelling</p>
-  </div>
-
-  <div class="project-card">
-    <h2 class="project-title">School Characteristics & Vulnerability Index</h2>
-    <p class="project-description">Used DfE school characteristics to build vulnerability clusters and identify demographic drivers of attainment gaps.</p>
-    <p class="project-tags">DfE Data · Python · Clustering · Education Analytics</p>
-  </div>
-
 </div>
 
-<!-- New Projects 
-<h1 class="projects-header">Recent Work Projects</h1>
-<p class="projects-subtitle">A brief overview of some projects I've worked on within the corporate landscape.</p>
-
-<div class="projects-container">
-  <div class="project-card">
-    <h2 class="project-title">Segmentation and Targeting</h2>
-    <p class="project-description">
-      Segmenting HCPs and HCOs to increase engagement through a data-driven strategy.
-      This is done by grouping HCPs based on attributes such as decision power, prescribing power, and patient base—while grouping HCOs based on potential.
-    </p>
-    <p class="project-tags">SQL</p>
-  </div>
-
-  <div class="project-card">
-    <h2 class="project-title">Ops Planning</h2>
-    <p class="project-description">
-      Supported operational planning for a £200M brand by delivering data-driven insights on key performance metrics and evaluating tactical options. Partnered with cross-functional teams to model scenarios, assess risks, and provide evidence-based recommendations that informed strategy and resource allocation.
-    </p>
-    <p class="project-tags">Excel · SQL · Python</p>
-  </div>
-</div> -->
-    
-  <!--  <div class="project-card">
-      <h2 class="project-title">API Auto Grouper</h2>
-      <p class="project-description">A custom-built API using Python and Flask that classifies messy text data into structured categories, streamlining internal workflows.</p>
-      <p class="project-tags">Flask · Regex · Automation</p>
-    </div> -->
   </div>
 
   <footer>
